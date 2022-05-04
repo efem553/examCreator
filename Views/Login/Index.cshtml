@@ -1,20 +1,29 @@
-﻿        <div class="container-fluid vh-50" style="margin-top:125px">
+﻿@model ApplicationUser
+        <div class="container-fluid vh-50" style="margin-top:125px">
             <div class="" style="margin-top:125px">
                 <div class="rounded d-flex justify-content-center">
                     <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
                         <div class="text-center">
                             <h3 class="text-primary">Kullanıcı Girişi</h3>
                         </div>
-                        <form action="">
+                        <form asp-action="Index" method="post">
                             <div class="p-4">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Kullanıcı Adı">
+                                    <input asp-for="UserName" class="form-control" placeholder="Kullanıcı Adı"><br />
                                 </div>
+                                <span asp-validation-for="UserName" class="text-danger"></span>
                                 <div class="input-group mb-3">
-                                    <input type="password" class="form-control" placeholder="Şifre">
+                                    <input asp-for="Password" type="password" class="form-control" placeholder="Şifre"><br />
                                 </div>
+                                <span asp-validation-for="Password" class="text-danger"></span>
                                 <div class="text-danger">
-                                    <label>Something went wrong</label>
+                                    @if(TempData["LoginErrorMessage"]!=null)
+                                    {
+                                        <ul>
+                                            <li>@TempData["LoginErrorMessage"]</li>
+                                        </ul>
+                                    }
+
                                 </div>
                                 <button class="btn btn-primary text-center mt-2 " type="submit">
                                     Giriş Yap
@@ -25,3 +34,8 @@
                 </div>
             </div>
         </div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+}
