@@ -18,8 +18,6 @@ namespace examCreator.Controllers
 
         public IActionResult Index()
         {
-            NewsFetcher news = new NewsFetcher();
-            List<NewsContent> a = news.GetLastFive();
             if (_userAuth.isUserAuthenticated(HttpContext))
             {
                 return View();

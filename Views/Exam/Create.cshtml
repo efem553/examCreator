@@ -1,0 +1,184 @@
+﻿@model examCreator.Models.ViewModels.CreateExamVM
+
+<div class="container">
+    <form class="vh-50" method="post">
+        <b>Yazı</b>
+        <select asp-for=Exam.Title style="width:100%;">
+            <option selected>-Choose An Article-</option>
+            @foreach (var item in Model.NewsContentList)
+            {
+                <option id="@item.NewsUrl" value=@item.Header>@item.Header</option>
+            }
+        </select>
+        @foreach (var item in Model.NewsContentList)
+        {
+            <data-item class="@item.NewsUrl" style="display:none;" >
+            @item.Content
+            </data-item>
+        }
+            <textarea asp-for="Exam.Content" rows="6" style="width:100%;margin-top:2%;" >
+            </textarea>
+        
+    <!-- Question 1 start -->
+        <input asp-for="Q1.QuestionText" type="text" style="width:100%;text-align:start;margin-top:2%;" placeholder="Soru 1" />
+        <div class="d-flex ">
+        <div class="input-group mb-3 mt-2 mx-2">
+            <span class="input-group-text">A)</span>
+            <input asp-for="Q1.Option1" type="text" style="width:90%">
+        </div>
+
+        <div class="input-group mb-3 mt-2">
+            <span class="input-group-text">B)</span>
+            <input asp-for="Q1.Option2" type="text" style="width:90%">
+        </div>
+        </div>
+    
+        <div class="d-flex ">
+        <div class="input-group mb-3 mt-2 mx-2">
+            <span class="input-group-text ">C)</span>
+            <input asp-for="Q1.Option3" type="text" style="width:90%">
+        </div>
+
+        <div class="input-group mb-3 mt-2">
+            <span class="input-group-text">D)</span>
+            <input asp-for="Q1.Option4" type="text" style="width:90%">
+        </div>
+        </div>
+        <div class="d-flex  ">
+            <div class="input-group mb-3 mt-2 justify-content-center">
+                <select asp-for="Q1.TrueOption" style="width:25%;">
+                    <option selected disabled>Doğru Cevap Seç</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+           </div>
+        </div>
+    <!-- Question 1 end -->
+    <!-- Question 2 start -->
+        <input asp-for="Q2.QuestionText" type="text" style="width:100%;text-align:start;margin-top:2%;" placeholder="Soru 2" />
+        <div class="d-flex ">
+        <div class="input-group mb-3 mt-2 mx-2">
+            <span class="input-group-text">A)</span>
+            <input asp-for="Q2.Option1" type="text" style="width:90%">
+        </div>
+
+        <div class="input-group mb-3 mt-2">
+            <span class="input-group-text">B)</span>
+            <input asp-for="Q2.Option2" type="text" style="width:90%">
+        </div>
+        </div>
+    
+        <div class="d-flex ">
+        <div class="input-group mb-3 mt-2 mx-2">
+            <span class="input-group-text ">C)</span>
+            <input asp-for="Q2.Option3" type="text" style="width:90%">
+        </div>
+
+        <div class="input-group mb-3 mt-2">
+            <span class="input-group-text">D)</span>
+            <input asp-for="Q2.Option4" type="text" style="width:90%">
+        </div>
+        </div>
+        <div class="d-flex  ">
+            <div class="input-group mb-3 mt-2 justify-content-center">
+                <select asp-for="Q2.TrueOption" style="width:25%;">
+                    <option selected disabled>Doğru Cevap Seç</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+           </div>
+        </div>
+    <!-- Question 2 end -->
+    <!-- Question 3 start -->
+        <input asp-for="Q3.QuestionText" type="text" style="width:100%;text-align:start;margin-top:2%;" placeholder="Soru 3" />
+        <div class="d-flex ">
+        <div class="input-group mb-3 mt-2 mx-2">
+            <span class="input-group-text">A)</span>
+            <input asp-for="Q3.Option1" type="text" style="width:90%">
+        </div>
+
+        <div class="input-group mb-3 mt-2">
+            <span class="input-group-text">B)</span>
+            <input asp-for="Q3.Option2" type="text" style="width:90%">
+        </div>
+        </div>
+    
+        <div class="d-flex ">
+        <div class="input-group mb-3 mt-2 mx-2">
+            <span class="input-group-text ">C)</span>
+            <input asp-for="Q3.Option3" type="text" style="width:90%">
+        </div>
+
+        <div class="input-group mb-3 mt-2">
+            <span class="input-group-text">D)</span>
+            <input asp-for="Q3.Option4" type="text" style="width:90%">
+        </div>
+        </div>
+        <div class="d-flex  ">
+            <div class="input-group mb-3 mt-2 justify-content-center">
+                <select asp-for="Q3.TrueOption" style="width:25%;">
+                    <option selected disabled>Doğru Cevap Seç</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+           </div>
+        </div>
+    <!-- Question 3 end -->
+    <!-- Question 4 start -->
+        <input asp-for="Q4.QuestionText" type="text" style="width:100%;text-align:start;margin-top:2%;" placeholder="Soru 4" />
+        <div class="d-flex ">
+        <div class="input-group mb-3 mt-2 mx-2">
+            <span class="input-group-text">A)</span>
+            <input asp-for="Q4.Option1" type="text" style="width:90%">
+        </div>
+
+        <div class="input-group mb-3 mt-2">
+            <span class="input-group-text">B)</span>
+            <input asp-for="Q4.Option2" type="text" style="width:90%">
+        </div>
+        </div>
+    
+        <div class="d-flex ">
+        <div class="input-group mb-3 mt-2 mx-2">
+            <span class="input-group-text ">C)</span>
+            <input asp-for="Q4.Option3" type="text" style="width:90%">
+        </div>
+
+        <div class="input-group mb-3 mt-2">
+            <span class="input-group-text">D)</span>
+            <input asp-for="Q4.Option4" type="text" style="width:90%">
+        </div>
+        </div>
+        <div class="d-flex  ">
+            <div class="input-group mb-3 mt-2 justify-content-center">
+                <select asp-for="Q4.TrueOption" style="width:25%;">
+                    <option selected disabled>Doğru Cevap Seç</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+           </div>
+        </div>
+    <!-- Question 4 end -->
+        <div class="d-flex justify-content-center">
+            <button type="submit" style="width:40%;">SINAVI OLUŞTUR</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts
+{
+    <script>
+    $('#Exam_Title').on('change', function() {
+      $("#Exam_Content").val($("."+$('option:selected', this).attr('id')).text().trim());
+    });
+
+    </script>
+}

@@ -17,7 +17,10 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
+builder.Services.AddScoped<IExamRepository, ExamRepository>();
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 builder.Services.AddScoped<UserAuthentication>();
+builder.Services.AddScoped<NewsFetcher>();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -13,6 +13,10 @@ namespace examCreator.Models.Data
         }
         public DbSet<ApplicationUser>? ApplicationUser { get; set; }
 
+        public DbSet<Exam>? Exam { get; set; }
+
+        public DbSet<Question>? Question { get; set; }
+
         public string? DbPath { get; set; }
 
 

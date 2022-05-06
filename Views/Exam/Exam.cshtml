@@ -1,0 +1,177 @@
+﻿@model examCreator.Models.ViewModels.ExamVM
+<div class="container">
+<table style="width:100%;">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan=2><h1 style="text-align:center;">@Model.Exam.Title</h1></td>
+        </tr>
+        <tr>
+            <td colspan=2><p>@Model.Exam.Content</p></td>
+            <input hidden asp-for="Exam.ExamId" />
+        </tr>
+
+        <tr class="mt-2">
+            <td class="mx-1">
+                <p>1) @Model.Q1.QuestionText</p>
+                <div class="align-content-center">
+                    <div class="btn-group-vertical" QuestId="@Model.Q1.QuestionId" role="group" style="width:100%;">
+                        <input type="radio" optionval="A" class="btn-check" name="Q1" id="Q1_A1" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q1_A1B" for="Q1_A1">A) @Model.Q1.Option1</label>
+
+                        <input type="radio" optionval="B" class="btn-check" name="Q1" id="Q1_A2" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q1_A2B" for="Q1_A2">B) @Model.Q1.Option2</label>
+
+                        <input type="radio" optionval="C" class="btn-check" name="Q1" id="Q1_A3" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q1_A3B" for="Q1_A3">C) @Model.Q1.Option3</label>
+
+                        <input type="radio" optionval="D" class="btn-check" name="Q1" id="Q1_A4" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q1_A4B" for="Q1_A4">D) @Model.Q1.Option4</label>
+                    </div>
+                </div>
+            </td>
+            <td class="mx-1">
+                <p>2) @Model.Q2.QuestionText</p>
+                <div class="align-content-center">
+                    <div class="btn-group-vertical" QuestId="@Model.Q2.QuestionId" role="group" style="width:100%;">
+                        <input type="radio" optionval="A" class="btn-check" name="Q2" id="Q2_A1" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q2_A1B"  for="Q2_A1">A) @Model.Q2.Option1</label>
+
+                        <input type="radio" optionval="B" class="btn-check" name="Q2" id="Q2_A2" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q2_A2B" for="Q2_A2">B) @Model.Q2.Option2</label>
+
+                        <input type="radio" optionval="C" class="btn-check" name="Q2" id="Q2_A3" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q2_A3B" for="Q2_A3">C) @Model.Q2.Option3</label>
+
+                        <input type="radio" optionval="D" class="btn-check" name="Q2" id="Q2_A4" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q2_A4B" for="Q2_A4">D) @Model.Q2.Option4</label>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr class="mt-2">
+            <td class="mx-1">
+                <p>3) @Model.Q3.QuestionText</p>
+                <div class="align-content-center">
+                    <div class="btn-group-vertical" QuestId="@Model.Q3.QuestionId" role="group" style="width:100%;">
+                        <input type="radio" optionval="A" class="btn-check" name="Q3" id="Q3_A1" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q3_A1B" for="Q3_A1">A) @Model.Q3.Option1</label>
+
+                        <input type="radio" optionval="B" class="btn-check" name="Q3" id="Q3_A2" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q3_A2B" for="Q3_A2">B) @Model.Q3.Option2</label>
+
+                        <input type="radio" optionval="C" class="btn-check" name="Q3" id="Q3_A3" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q3_A3B" for="Q3_A3">C) @Model.Q3.Option3</label>
+
+                        <input type="radio" optionval="D" class="btn-check" name="Q3" id="Q3_A4" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q4_A4B" for="Q3_A4">D) @Model.Q3.Option4</label>
+                    </div>
+                </div>
+            </td>
+            <td class="mx-1">
+                <p>4) @Model.Q4.QuestionText</p>
+                <div class="align-content-center">
+                    <div class="btn-group-vertical" QuestId="@Model.Q4.QuestionId" role="group" style="width:100%;">
+                        <input type="radio" optionval="A" class="btn-check" name="Q4" id="Q4_A1" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q4_A1B" for="Q4_A1">A) @Model.Q4.Option1</label>
+
+                        <input type="radio" optionval="B" class="btn-check" name="Q4" id="Q4_A2" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q4_A2B" for="Q4_A2">B) @Model.Q4.Option2</label>
+
+                        <input type="radio" optionval="C" class="btn-check" name="Q4" id="Q4_A3" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q4_A3B" for="Q4_A3">C) @Model.Q4.Option3</label>
+
+                        <input type="radio" optionval="D" class="btn-check" name="Q4" id="Q4_A4" autocomplete="off" >
+                        <label class="btn btn-outline-primary my-1" id="Q4_A4B" for="Q4_A4">D) @Model.Q4.Option4</label>
+                    </div>
+                </div>
+            </td>
+        </tr>
+  
+        <tr>
+            <td colspan=2>
+                <div class="d-flex justify-content-center">
+                <button class="btn btn-danger align-self-center" id="examFinishButton" style="width:40%;height:20%;">SINAVI TAMAMLA</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+@section Scripts
+{
+    <script>
+        var responseFromApi;
+    $( "#examFinishButton" ).click(function() {
+         $.ajax({
+                    type: 'GET',
+                    url: '/Exam/CheckAnswers?Q1='+$('input[type=radio][name=Q1]:checked').parent("div").attr("questid")+'&Q1A='+$('input[type=radio][name=Q1]:checked').attr('optionval')+'&'
+                         + 'Q2='+$('input[type=radio][name=Q2]:checked').parent("div").attr("questid")+'&Q2A='+$('input[type=radio][name=Q2]:checked').attr('optionval')+'&'
+                         + 'Q3='+$('input[type=radio][name=Q3]:checked').parent("div").attr("questid")+'&Q3A='+$('input[type=radio][name=Q3]:checked').attr('optionval')+'&'
+                         + 'Q4='+$('input[type=radio][name=Q4]:checked').parent("div").attr("questid")+'&Q4A='+$('input[type=radio][name=Q4]:checked').attr('optionval'),
+                    complete: function (xhr) {
+                        if (xhr.status === 200) {
+
+                        }
+                        else {
+                            console.error("Something went wrong while reaching api");
+                        }
+                    },
+                    success:function(data) {
+                        responseFromApi=data['response'];
+                        if (responseFromApi['q1']==true)
+                        {
+
+                            $("#"+$('input[type=radio][name=Q1]:checked').attr('id')+"B").addClass("bg-success");
+                        }
+                        else if (responseFromApi['q1']==false)
+                        {
+
+                            $("#"+$('input[type=radio][name=Q1]:checked').attr('id')+"B").addClass("bg-danger")
+                        }
+
+                        if (responseFromApi['q2']==true)
+                        {
+
+                            $("#"+$('input[type=radio][name=Q2]:checked').attr('id')+"B").addClass("bg-success");
+                        }
+                        else if (responseFromApi['q2']==false)
+                        {
+
+                            $("#"+$('input[type=radio][name=Q2]:checked').attr('id')+"B").addClass("bg-danger")
+                        }
+
+                        if (responseFromApi['q3']==true)
+                        {
+
+                            $("#"+$('input[type=radio][name=Q3]:checked').attr('id')+"B").addClass("bg-success");
+                        }
+                        else if (responseFromApi['q3']==false)
+                        {
+
+                            $("#"+$('input[type=radio][name=Q3]:checked').attr('id')+"B").addClass("bg-danger")
+                        }
+
+                        if (responseFromApi['q4']==true)
+                        {
+
+                            $("#"+$('input[type=radio][name=Q4]:checked').attr('id')+"B").addClass("bg-success");
+                        }
+                        else if (responseFromApi['q4']==false)
+                        {
+
+                            $("#"+$('input[type=radio][name=Q4]:checked').attr('id')+"B").addClass("bg-danger")
+                        }
+                    }
+
+                });
+});
+    </script>
+}

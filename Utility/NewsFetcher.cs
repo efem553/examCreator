@@ -12,8 +12,6 @@ namespace examCreator.Utility
             HtmlWeb wired = new HtmlWeb();
             HtmlDocument page = new HtmlDocument();
             page =wired.Load("https://www.wired.com/");
-            //HtmlNodeCollection linkNodes = new HtmlNodeCollection();
-            //linkNodes =page.DocumentNode.SelectNodes("/html/body/div[1]/div/main/div[1]/div[1]/section/div[3]/div/div/div/div");
             List<NewsContent> newsList = new List<NewsContent>();
             IEnumerable<HtmlNode> newsDiv = page.DocumentNode.Descendants("div")
                     .Where(node => node.GetAttributeValue("class", "") == "summary-list__items").Last().Descendants("div").Where(node => node.GetAttributeValue("data-section-title", "").StartsWith("hero collage/right rail "));
@@ -26,7 +24,7 @@ namespace examCreator.Utility
                 NewsUrls.Add(item.ChildNodes[1].ChildNodes[0].Attributes[3].Value);
 
             }
-
+            var i = 0;
             foreach (string item in NewsUrls)
             {
                 page = wired.Load("https://www.wired.com"+item);
@@ -34,12 +32,18 @@ namespace examCreator.Utility
                     .Where(node => node.GetAttributeValue("data-testid", "") == "ContentHeaderTitleBlockWrapper").First().ChildNodes[1].InnerText;
                 var text = page.DocumentNode.Descendants("div")
                     .Where(node => node.GetAttributeValue("class", "") == "body__inner-container").First().ChildNodes[0].InnerText;
+                var url = item.Split("/").Last();
                 newsList.Add(new NewsContent
                 {
                     Header = head,
-                    Content = text
+                    Content = text,
+                    NewsUrl = url
                 });
-
+                i++;
+                if (i==5)
+                {
+                    break;
+                }
             }
 
             return newsList;

@@ -40,7 +40,7 @@ namespace examCreator.Controllers
                         _userRepo.Save();
                         HttpContext.Session.SetString("UserName", user.UserName);
                         HttpContext.Session.SetString("LoggedInSecret", user.LoggedInSecret);
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Exam");
                     }
                     return View(user);
                    

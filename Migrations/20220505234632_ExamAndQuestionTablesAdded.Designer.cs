@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using examCreator.Models.Data;
 
@@ -10,9 +11,10 @@ using examCreator.Models.Data;
 namespace examCreator.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220505234632_ExamAndQuestionTablesAdded")]
+    partial class ExamAndQuestionTablesAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
@@ -57,9 +59,6 @@ namespace examCreator.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Content")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
